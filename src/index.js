@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CourseManager from './Container/CourseManager';
+import CourseManagerContainer from './containers/CourseManager';
 
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
-    <CourseManager/>,
+    <CourseManagerContainer/>,
     document.getElementById('root')
 );
 
