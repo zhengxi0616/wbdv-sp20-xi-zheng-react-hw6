@@ -16,9 +16,9 @@ export default class CourseCard extends React.Component {
     }
     render() {
         return (
-            <div className="card w-12">
+            <div className="card w-15">
                 <img className="card-img-top"
-                     src="https://picsum.photos/250/400"/>
+                     src="https://picsum.photos/270/350"/>
                 <div className="card-body">
                     {
                         !this.state.editing &&
@@ -34,7 +34,7 @@ export default class CourseCard extends React.Component {
                         })}
                         value={this.state.EditedCourseTitle}/>
                     }
-                    <p className="card-text">Card text.</p>
+                    <p className="card-text">preview text</p>
                     <div>
                         {!this.state.editing &&
                         <button onClick={() => this.props.deleteCourse(this.props.course)}>
