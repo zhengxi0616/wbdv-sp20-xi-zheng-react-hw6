@@ -13,15 +13,6 @@ const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse})
                     <th className="tablewidth wbdv-header wbdv-title">Title</th>
                     <th className="wbdv-header wbdv-owner">Owned by me</th>
                     <th className="wbdv-header wbdv-last-modified">Last modified by me</th>
-                    <th className="wbdv-header wbdv-sort">
-                        <button type="button" className="wbdv-button wbdv-grid-layout">
-                            <i className="fas fa-grip-horizontal"></i>
-                        </button>
-                        or
-                        <button type="button" className="wbdv-button wbdv-list-layout">
-                            <i className="fas fa-bars"></i>
-                        </button>
-                    </th>
                     <th>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Sort by&nbsp;

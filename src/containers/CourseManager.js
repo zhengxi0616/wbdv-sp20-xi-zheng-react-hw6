@@ -97,7 +97,7 @@ class CourseManagerContainer extends React.Component {
     render() {
         return(
             <div>
-                <h1>Course Manager</h1>
+                <h3>Course Manager</h3>
 
                 {
                     this.state.showEditor &&
@@ -108,27 +108,47 @@ class CourseManagerContainer extends React.Component {
                 {
                     !this.state.showEditor &&
                     <div>
-                        <button onClick={this.toggle}>Toggle</button>
-                        <input
-                            onChange={(e) => this.updateForm({
-                                newCourseTitle: e.target.value
-                            })}
-                            value={this.state.newCourseTitle}/>
-                        <button onClick={this.addCourse}>Add Course</button>
                         {
                             this.state.layout === 'table' &&
-                            <CourseTableComponent
+                            <nav className="navbar navbar-light bg-light">
+                                        <button onClick={this.toggle}><i className="fas fa-grip-horizontal"></i></button>
+                                        <input
+                                            onChange={(e) => this.updateForm({
+                                                newCourseTitle: e.target.value
+                                            })}
+                                            value={this.state.newCourseTitle}/>
+                                        <button onClick={this.addCourse}>Add Course</button>
+                                    </nav>
+                        }
+                        {
+                            this.state.layout === 'table' &&
+                                <CourseTableComponent
                                 showEditor={this.showEditor}
                                 deleteCourse={this.deleteCourse}
                                 updateCourse={this.updateCourse}
                                 courses={this.state.courses}/>
                         }
-
                         {
-                            this.state.layout === 'grid'
-                            && <CourseGridComponent
-                                courses={this.state.courses}/>
+                            this.state.layout === 'grid' &&
+                            <nav className="navbar navbar-light bg-light">
+                                <button onClick={this.toggle}><i className="fas fa-bars"></i></button>
+                                <input
+                                    onChange={(e) => this.updateForm({
+                                        newCourseTitle: e.target.value
+                                    })}
+                                    value={this.state.newCourseTitle}/>
+                                <button onClick={this.addCourse}>Add Course</button>
+                            </nav>
                         }
+                        {
+                            this.state.layout === 'grid'&&
+                                <CourseGridComponent
+                                    showEditor={this.showEditor}
+                                    deleteCourse={this.deleteCourse}
+                                    updateCourse={this.updateCourse}
+                                    courses={this.state.courses}/>
+                        }
+
                     </div>
                 }
 
