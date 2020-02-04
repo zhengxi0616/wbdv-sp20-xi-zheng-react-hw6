@@ -1,7 +1,7 @@
 import React from "react";
 import CourseRowComponent from "./CourseRowComponent";
 
-const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse}) =>
+const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse, updateForm}) =>
 
     <div className="container body">
         <h5>Total Managed Course: {courses.length}</h5>
@@ -31,6 +31,7 @@ const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse})
                                 showEditor={showEditor}
                                 deleteCourse={deleteCourse}
                                 updateCourse={updateCourse}
+                                updateForm={updateForm}
                                 />
                         )
                     })

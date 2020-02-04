@@ -1,12 +1,12 @@
 import React from "react";
 
 class CourseRowComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     state = {
         editing: false,
-    }
-
-    updateEditing = (newState) => {
-        this.setState(newState)
+        EditedCourseTitle: ""
     }
 
     render() {
@@ -22,10 +22,10 @@ class CourseRowComponent extends React.Component {
 
                     {this.state.editing &&
                     <input
-                        onChange={(e) => this.updateEditing({
-                            newCourseTitle: e.target.value
+                        onChange={(e) => this.setState({
+                            EditedCourseTitle: e.target.value
                         })}
-                        value={this.state.newCourseTitle}/>
+                        value={this.state.EditedCourseTitle}/>
 
                     }
 
@@ -49,8 +49,9 @@ class CourseRowComponent extends React.Component {
                         </button>
                     }
                     {this.state.editing &&
-                        <button onClick={() => {
-                            this.setState({editing: false} );this.props.updateCourse(this.props.course);}}>
+                        <button onClick={() =>
+                            this.props.updateCourse(this.props.course, this.state.EditedCourseTitle).then(() => this.setState({editing:false}))
+                            }>
                             <i className="fas fa-save">Save</i>
                         </button>
                     }

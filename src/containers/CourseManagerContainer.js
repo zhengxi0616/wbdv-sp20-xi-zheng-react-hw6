@@ -5,12 +5,14 @@ import CourseEditorComponent from "../components/CourseEditor/CourseEditorCompon
 import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../service/CourseService";
 
 class CourseManagerContainer extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     state = {
         layout: 'table',
         showEditor: false,
         newCourseTitle: 'New Course Name',
         courses: [],
-        EditedCourseTitle: 'New Course Name'
     }
 
     componentDidMount = async () => {
@@ -31,68 +33,41 @@ class CourseManagerContainer extends React.Component {
                     layout: 'table'
                 })
             }
-        })
+        });
 
     deleteCourse = (course) =>
-        deleteCourse(course._id)
-            .then(status => {
-                this.setState(prevState => {
-                    return ({
-                        courses: prevState
-                            .courses
-                            .filter(function(crs) {
-                                return crs._id !== course._id
-                            })
-                    })
-                })
-            })
+        deleteCourse(course._id).then(findAllCourses).then(courses => this.setState({courses:courses}));
 
-        updateCourse = (course) =>
-            updateCourse(course._id,{title: this.state.newCourseTitle})
-            .then(actualCourse => {
-                this.setState(prevState => {
-                    return ({
-                        courses: prevState
-                            .courses
-                            .filter(function(crs) {
-                                if(crs._id !== course._id){
-                                    return crs;
-                                    }else {
-                                    return {title: actualCourse};
-                                }
-                            })
-                    })
-                })
-            })
+    updateCourse = (course, title) =>
+        updateCourse(course._id,{title: title}).then(findAllCourses).then(courses => this.setState({courses: courses}));
 
-        addCourse = () =>
-            createCourse({
-                title: this.state.newCourseTitle
-            }).then(actualCourse => this.setState(prevState => {
-                    return({
-                        courses: [
-                            ...prevState.courses,
-                            actualCourse
-                        ]
-                    })
-                })
-            )
+    addCourse = () =>
+        createCourse({
+            title: this.state.newCourseTitle
+        }).then(actualCourse => this.setState(prevState => {
+            return({
+                courses: [
+                    ...prevState.courses,
+                    actualCourse
+                ]
+            })
+        })
+        );
 
 
 
     showEditor = () =>
             this.setState({
                 showEditor: true
-            })
+            });
 
     hideEditor = () =>
         this.setState({
             showEditor: false
-        })
+        });
 
-    updateForm = (newState) => {
-        this.setState(newState)
-    }
+    updateForm = (newState) => this.setState(newState);
+
 
     render() {
         return(
@@ -126,6 +101,7 @@ class CourseManagerContainer extends React.Component {
                                 showEditor={this.showEditor}
                                 deleteCourse={this.deleteCourse}
                                 updateCourse={this.updateCourse}
+                                updateForm={this.updateForm}
                                 courses={this.state.courses}
                                 //EditedCourseTitle={this.state.EditedCourseTitle}
                                 />
@@ -149,6 +125,7 @@ class CourseManagerContainer extends React.Component {
                                     deleteCourse={this.deleteCourse}
                                     updateCourse={this.updateCourse}
                                     courses={this.state.courses}
+                                    updateForm={this.updateForm}
                                     //EditedCourseTitle={this.state.EditedCourseTitle}
                                 />
                         }

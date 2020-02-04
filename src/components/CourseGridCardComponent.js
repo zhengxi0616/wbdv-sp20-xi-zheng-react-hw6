@@ -1,18 +1,12 @@
 import React from 'react'
 
 export default class CourseCard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     state = {
         editing: false,
-        EditedCourseTitle: 'New Course Name',
-        courses: this.courses
-    }
-
-    updateEditing = (newState) => {
-        this.setState(newState)
-    }
-    constructor(props) {
-        super(props)
-        this.state = {}
+        EditedCourseTitle: ""
     }
     render() {
         return (
@@ -29,11 +23,12 @@ export default class CourseCard extends React.Component {
 
                     {this.state.editing &&
                     <input
-                        onChange={(e) => this.updateEditing({
+                        onChange={(e) => this.setState({
                             EditedCourseTitle: e.target.value
                         })}
                         value={this.state.EditedCourseTitle}/>
                     }
+
                     <p className="card-text">preview text</p>
                     <div>
                         {!this.state.editing &&
@@ -48,8 +43,9 @@ export default class CourseCard extends React.Component {
                         </button>
                         }
                         {this.state.editing &&
-                        <button onClick={() => {
-                            this.setState({editing: false} );this.props.updateCourse(this.props.course);}}>
+                        <button onClick={() =>
+                            this.props.updateCourse(this.props.course, this.state.EditedCourseTitle).then(() => this.setState({editing:false}))
+                        }>
                             <i className="fas fa-save">Save</i>
                         </button>
                         }
