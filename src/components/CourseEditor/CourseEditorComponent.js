@@ -1,27 +1,36 @@
 import React from "react";
 import ModuleListComponent from "./ModuleListComponent";
-import LessonTabs from "./LessonTabs";
-import TopicPills from "./TopicPills";
+import LessonTabsComponent from "./LessonTabsComponent";
+import TopicPillsComponent from "./TopicPillsComponent";
+import WidgetListComponent from "./WidgetListComponent";
 
 const CourseEditorComponent = ({hideEditor}) =>
     <div>
-        <button onClick={hideEditor}>Close</button>
-        <h3>Course Editor</h3>
 
+        <nav className="navbar navbar-light bg-light">
+            <div className="col-6 row">
+                <button onClick={hideEditor}>close</button>
+                <h3>Course Editor</h3>
+            </div>
+            <div className="col-5">
+                <LessonTabsComponent/>
+            </div>
+        </nav>
         <div className="row">
             <div className="col-4">
-                <ModuleListComponent
-                    modules={[
-                        {_id: "123", title: "CSS"},
-                        {_id: "234", title: "HTML"},
-                        {_id: "345", title: "React"}
-                    ]}/>
+                <ModuleListComponent/>
             </div>
             <div className="col-8">
-                <LessonTabs/>
-                <TopicPills/>
+                <div className="container">
+                    <TopicPillsComponent/>
+                    <div align="right">
+                        <button type="button" className="btn-sm btn-success">Save</button>
+                        <text>Preview</text>
+                        <button type="button" className="btn"><i className="far fa-eye-slash"></i></button>
+                    </div>
+                    <WidgetListComponent/>
+                </div>
             </div>
         </div>
     </div>
-
 export default CourseEditorComponent

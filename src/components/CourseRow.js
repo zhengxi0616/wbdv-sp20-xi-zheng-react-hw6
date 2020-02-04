@@ -3,8 +3,6 @@ import React from "react";
 class CourseRow extends React.Component {
     state = {
         editing: false,
-        EditedCourseTitle: 'New Course Name',
-        courses: this.courses
     }
 
     updateEditing = (newState) => {
@@ -25,9 +23,10 @@ class CourseRow extends React.Component {
                     {this.state.editing &&
                     <input
                         onChange={(e) => this.updateEditing({
-                            EditedCourseTitle: e.target.value
+                            newCourseTitle: e.target.value
                         })}
-                        value={this.state.EditedCourseTitle}/>
+                        value={this.state.newCourseTitle}/>
+
                     }
 
                 </td>

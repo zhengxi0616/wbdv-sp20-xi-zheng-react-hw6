@@ -1,6 +1,6 @@
 import React from "react";
 import CourseTableComponent from "../components/CourseTable";
-import CourseGridComponent from "../components/CourseGrid";
+import CourseGridComponent from "../components/CourseGridComponent";
 import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
 import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../service/CourseService";
 
@@ -10,7 +10,7 @@ class CourseManagerContainer extends React.Component {
         showEditor: false,
         newCourseTitle: 'New Course Name',
         courses: [],
-        //EditedCourseTitle: 'New Course Name'
+        EditedCourseTitle: 'New Course Name'
     }
 
     componentDidMount = async () => {
@@ -126,7 +126,9 @@ class CourseManagerContainer extends React.Component {
                                 showEditor={this.showEditor}
                                 deleteCourse={this.deleteCourse}
                                 updateCourse={this.updateCourse}
-                                courses={this.state.courses}/>
+                                courses={this.state.courses}
+                                //EditedCourseTitle={this.state.EditedCourseTitle}
+                                />
                         }
                         {
                             this.state.layout === 'grid' &&
@@ -146,7 +148,9 @@ class CourseManagerContainer extends React.Component {
                                     showEditor={this.showEditor}
                                     deleteCourse={this.deleteCourse}
                                     updateCourse={this.updateCourse}
-                                    courses={this.state.courses}/>
+                                    courses={this.state.courses}
+                                    //EditedCourseTitle={this.state.EditedCourseTitle}
+                                />
                         }
 
                     </div>
