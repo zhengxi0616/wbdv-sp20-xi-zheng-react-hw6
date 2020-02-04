@@ -1,5 +1,5 @@
 import React from "react";
-import CourseTableComponent from "../components/CourseTable";
+import CourseTableComponent from "../components/CourseTableComponent";
 import CourseGridComponent from "../components/CourseGridComponent";
 import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
 import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../service/CourseService";

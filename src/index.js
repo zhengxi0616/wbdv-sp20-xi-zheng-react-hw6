@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CourseManagerContainer from './containers/CourseManager';
+import CourseManagerContainer from './containers/CourseManagerContainer';
 
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';

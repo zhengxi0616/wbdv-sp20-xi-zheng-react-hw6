@@ -1,6 +1,6 @@
 import React from 'react'
-import CourseGridCardComponent from './CourseGridCard'
-import CourseRow from "./CourseRow";
+import CourseGridCardComponent from './CourseGridCardComponent'
+
 
 const CourseGridComponent = ({courses, showEditor, updateCourse, deleteCourse}) =>
     <div>

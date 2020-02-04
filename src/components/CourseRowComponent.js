@@ -1,6 +1,6 @@
 import React from "react";
 
-class CourseRow extends React.Component {
+class CourseRowComponent extends React.Component {
     state = {
         editing: false,
     }
@@ -61,4 +61,4 @@ class CourseRow extends React.Component {
     }
 }
 
-export default CourseRow
+export default CourseRowComponent
