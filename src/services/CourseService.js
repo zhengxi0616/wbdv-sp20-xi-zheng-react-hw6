@@ -35,3 +35,8 @@ export const findAllCourses = () => {
         .then(response => response.json())
 }
 
+export const findUserById = async (courseId) =>
+{
+    return fetch(`${API_URL}/${courseId}`)
+        .then(response => response.json())
+}
