@@ -10,7 +10,8 @@ export default class CourseCard extends React.Component {
     }
     render() {
         return (
-            <div className="card w-15">
+            <div className={"col-xl-2 col-lg-3 col-md-4 col-sm-6"}>
+            <div className="card">
                 <img className="card-img-top"
                      src="https://picsum.photos/270/350"/>
                 <div className="card-body">
@@ -51,6 +52,7 @@ export default class CourseCard extends React.Component {
                         }
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
