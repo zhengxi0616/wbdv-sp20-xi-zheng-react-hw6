@@ -2,7 +2,7 @@ import React from "react";
 import CourseTableComponent from "../components/CourseTableComponent";
 import CourseGridComponent from "../components/CourseGridComponent";
 import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
-import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../service/CourseService";
+import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../services/CourseService";
 
 class CourseManagerContainer extends React.Component {
     constructor(props) {
@@ -86,7 +86,7 @@ class CourseManagerContainer extends React.Component {
                         {
                             this.state.layout === 'table' &&
                             <nav className="navbar navbar-light bg-light">
-                                        <button onClick={this.toggle}><i className="fas fa-grip-horizontal"></i></button>
+                                        <button className="buttonFalse" onClick={this.toggle}><i className="fas fa-grip-horizontal"></i></button>
                                         <input
                                             onChange={(e) => this.updateForm({
                                                 newCourseTitle: e.target.value

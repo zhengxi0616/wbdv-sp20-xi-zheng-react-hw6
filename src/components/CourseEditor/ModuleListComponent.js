@@ -37,10 +37,10 @@ const ModuleListComponent = ({modules}) =>
         </li>
         <li class="list-group-item">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <input class=".w-2" type="text" placeholder="New Module"/>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-3" >
                     <button type="button" class="wbdv-module-item-add-btn"><i class="far fa-plus-square"></i>
                     </button>
                 </div>

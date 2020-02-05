@@ -3,16 +3,25 @@ import React from "react";
 class CourseRowComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
     state = {
         editing: false,
-        EditedCourseTitle: ""
+        EditedCourseTitle: "",
+        highlighting: false
     }
+
+    handleClick=()=>{
+        this.setState({
+            highlighting:!this.state.highlighting
+        })
+    }
+
 
     render() {
         return(
-            <tr>
-                <td className="wbdv-row wbdv-title">
+            <tr className={this.state.highlighting ? "highlightTrue": "highlightFalse"}>
+                <td className="wbdv-row wbdv-title"  onClick={this.handleClick}>
                     {
                         !this.state.editing &&
                         <a onClick={this.props.showEditor} href="#">
@@ -30,13 +39,19 @@ class CourseRowComponent extends React.Component {
                     }
 
                 </td>
-                <td className="wbdv-row wbdv-owner">
+                <td className="wbdv-row wbdv-owner"  onClick={this.handleClick}>
                     me
                 </td>
-                <td className="wbdv-row wbdv-modified-date">
+                <td className="wbdv-row wbdv-modified-date"  onClick={this.handleClick}>
                     6:45 PM
                 </td>
-                <td align="right">
+                <td className="wbdv-row wbdv-modified-date"  onClick={this.handleClick}>
+                   &nbsp;
+                </td>
+
+
+
+                <td>
                     {!this.state.editing &&
                     <button onClick={() => this.props.deleteCourse(this.props.course)}>
                         <i className="fas fa-trash-alt"></i>
@@ -44,21 +59,26 @@ class CourseRowComponent extends React.Component {
                     }
 
                     {!this.state.editing &&
-                        <button onClick={() => {this.setState({editing: true})}}>
+                    <button onClick={() => {
+                        this.setState({editing: true})
+                    }}>
                         <i className="fas fa-edit"></i>
-                        </button>
+                    </button>
                     }
                     {this.state.editing &&
-                        <button onClick={() =>
-                            this.props.updateCourse(this.props.course, this.state.EditedCourseTitle).then(() => this.setState({editing:false}))
-                            }>
-                            <i className="fas fa-save">Save</i>
-                        </button>
+                    <button onClick={() =>
+                        this.props.updateCourse(this.props.course, this.state.EditedCourseTitle).then(() => this.setState({editing: false}))
+                    }>
+                        <i className="fas fa-save">Save</i>
+                    </button>
                     }
 
                 </td>
             </tr>
+
+
         )
+
     }
 }
 

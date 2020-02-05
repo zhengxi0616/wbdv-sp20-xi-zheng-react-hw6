@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseGridCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseGridCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseGridComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseRowComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseTableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseTableComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/CourseService.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
       <updated>1580626736347</updated>
       <workItem from="1580626739890" duration="36397000" />
       <workItem from="1580792296942" duration="6000" />
-      <workItem from="1580845170296" duration="3731000" />
+      <workItem from="1580845170296" duration="8835000" />
     </task>
     <servers />
   </component>
@@ -72,10 +73,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="288" y="94" key="#ESLint" timestamp="1580764688189">
+    <state x="288" y="94" key="#ESLint" timestamp="1580855573788">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state x="288" y="94" key="#ESLint/0.23.1440.806@0.23.1440.806" timestamp="1580764688189" />
+    <state x="288" y="94" key="#ESLint/0.23.1440.806@0.23.1440.806" timestamp="1580855573788" />
     <state x="353" y="153" width="670" height="676" key="search.everywhere.popup" timestamp="1580683468816">
       <screen x="0" y="23" width="1440" height="806" />
     </state>

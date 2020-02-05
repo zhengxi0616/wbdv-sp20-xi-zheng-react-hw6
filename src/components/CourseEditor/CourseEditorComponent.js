@@ -17,7 +17,7 @@ const CourseEditorComponent = ({hideEditor}) =>
             </div>
         </nav>
         <div className="row">
-            <div className="col-4">
+            <div className="col-3">
                 <ModuleListComponent/>
             </div>
             <div className="col-8">

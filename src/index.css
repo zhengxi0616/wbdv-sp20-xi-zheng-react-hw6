@@ -1,1 +1,9 @@
+.highlightTrue {
+    background-color: lightskyblue;
+    color:white;
+}
 
+.highlightFalse {
+    background-color: white;
+    color: black;
+}

@@ -20,6 +20,7 @@ const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse, 
                             <i className="fas fa-sort-alpha-down"></i>
                         </button>
                     </th>
+                    <th>Modify</th>
                 </tr>
                 </thead>
                 <tbody>
