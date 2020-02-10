@@ -1,8 +1,8 @@
 import React from "react";
-import CourseTableComponent from "../components/CourseList/CourseTableComponent";
-import CourseGridComponent from "../components/CourseList/CourseGridComponent";
+
 import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
 import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../services/CourseService";
+import CourseListComponent from "../components/CourseList/CourseListComponent";
 
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
@@ -40,7 +40,7 @@ class CourseManagerContainer extends React.Component {
     deleteCourse = (course) =>
         deleteCourse(course._id).then(findAllCourses).then(courses => this.setState({courses:courses}));
 
-    editCourse = (course, title) =>
+    updateCourse = (course, title) =>
         updateCourse(course._id,{title: title}).then(findAllCourses).then(courses => this.setState({courses: courses}));
 
     addCourse = () =>
@@ -94,7 +94,7 @@ class CourseManagerContainer extends React.Component {
                             courses={this.state.courses}
                             layout={this.state.layout}
                             showEditor={this.showEditor}
-                            editCourse={this.editCourse}/>
+                            updateCourse={this.updateCourse}/>
                     }/>
 
                 <Route

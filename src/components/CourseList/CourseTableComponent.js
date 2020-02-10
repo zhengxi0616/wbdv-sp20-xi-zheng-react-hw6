@@ -1,9 +1,9 @@
 import React from "react";
 import CourseRowComponent from "./CourseRowComponent";
 
-const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse, updateForm}) =>
+const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse}) =>
 
-    <div className="container body">
+    <div>
         <h5>Total Managed Course: {courses.length}</h5>
         <div className="table-responsive-sm">
 
@@ -28,11 +28,12 @@ const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse, 
                     courses.map(function(course, index){
                         return (
                             <CourseRowComponent
+                                key={course._id}
                                 course={course}
                                 showEditor={showEditor}
                                 deleteCourse={deleteCourse}
                                 updateCourse={updateCourse}
-                                updateForm={updateForm}
+
                                 />
                         )
                     })

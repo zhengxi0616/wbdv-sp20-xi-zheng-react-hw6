@@ -2,7 +2,7 @@ import React from 'react'
 import CourseGridCardComponent from './CourseGridCardComponent'
 
 
-const CourseGridComponent = ({courses, showEditor, updateCourse, deleteCourse, updateForm}) =>
+const CourseGridComponent = ({courses, showEditor, updateCourse, deleteCourse}) =>
     <div>
         <h5>Total Managed Course: {courses.length}</h5>
         <div className="row">
@@ -15,12 +15,13 @@ const CourseGridComponent = ({courses, showEditor, updateCourse, deleteCourse, u
                             showEditor={showEditor}
                             deleteCourse={deleteCourse}
                             updateCourse={updateCourse}
-                            updateForm={updateForm}
+
                         />
                     )
                 })
             }
         </div>
     </div>
+
 
 export default CourseGridComponent

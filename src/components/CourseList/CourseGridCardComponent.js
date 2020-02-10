@@ -17,7 +17,7 @@ export default class CourseCard extends React.Component {
                 <div className="card-body">
                     {
                         !this.state.editing &&
-                        <a onClick={this.props.showEditor} href="#">
+                        <a onClick={this.props.showEditor} href={`/course-editor/${this.props.course._id}`}>
                             {this.props.course.title}
                         </a>
                     }
