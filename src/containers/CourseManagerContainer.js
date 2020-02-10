@@ -1,8 +1,10 @@
 import React from "react";
-import CourseTableComponent from "../components/CourseTableComponent";
-import CourseGridComponent from "../components/CourseGridComponent";
+import CourseTableComponent from "../components/CourseList/CourseTableComponent";
+import CourseGridComponent from "../components/CourseList/CourseGridComponent";
 import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
 import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../services/CourseService";
+
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 class CourseManagerContainer extends React.Component {
     constructor(props) {
@@ -38,7 +40,7 @@ class CourseManagerContainer extends React.Component {
     deleteCourse = (course) =>
         deleteCourse(course._id).then(findAllCourses).then(courses => this.setState({courses:courses}));
 
-    updateCourse = (course, title) =>
+    editCourse = (course, title) =>
         updateCourse(course._id,{title: title}).then(findAllCourses).then(courses => this.setState({courses: courses}));
 
     addCourse = () =>
@@ -66,75 +68,71 @@ class CourseManagerContainer extends React.Component {
             showEditor: false
         });
 
-    updateForm = (newState) => this.setState(newState);
+    updateFormState = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            newCourseTitle: event.target.value
+        })
+    }
 
 
     render() {
         return(
             <div>
                 <h3>Course Manager</h3>
+            <Router>
+                <Route
+                    path="/"
+                    exact={true}
+                    render={() =>
+                        <CourseListComponent
+                            updateFormState={this.updateFormState}
+                            newCourseTitle={this.state.newCourseTitle}
+                            addCourse={this.addCourse}
+                            toggle={this.toggle}
+                            deleteCourse={this.deleteCourse}
+                            courses={this.state.courses}
+                            layout={this.state.layout}
+                            showEditor={this.showEditor}
+                            editCourse={this.editCourse}/>
+                    }/>
 
-                {
-                    this.state.showEditor &&
-                    <CourseEditorComponent
-                        hideEditor={this.hideEditor}/>
-                }
+                <Route
+                    path="/course-editor/:courseId"
+                    exact={true}
+                    render={(props) =>
+                        <CourseEditorComponent
+                            {...props}
+                            courseId={props.match.params.courseId}
+                            hideEditor={this.hideEditor}/>
+                    }/>
+                <Route
+                    path="/course-editor/:courseId/module/:moduleId"
+                    exact={true}
+                    render={(props) =>
+                        <CourseEditorComponent
+                            {...props}
+                            moduleId={props.match.params.moduleId}
+                            courseId={props.match.params.courseId}
+                            hideEditor={this.hideEditor}/>
+                    }/>
+                <Route
+                    path="/course-editor/:courseId/module/:moduleId/lesson/:lessonId"
+                    exact={true}
+                    render={(props) =>
+                        <CourseEditorComponent
+                            {...props}
+                            lessonId={props.match.params.lessonId}
+                            moduleId={props.match.params.moduleId}
+                            courseId={props.match.params.courseId}
+                            hideEditor={this.hideEditor}/>
+                    }/>
 
-                {
-                    !this.state.showEditor &&
-                    <div>
-                        {
-                            this.state.layout === 'table' &&
-                            <nav className="navbar navbar-light bg-light">
-                                        <button className="buttonFalse" onClick={this.toggle}><i className="fas fa-grip-horizontal"></i></button>
-                                        <input
-                                            onChange={(e) => this.updateForm({
-                                                newCourseTitle: e.target.value
-                                            })}
-                                            value={this.state.newCourseTitle}/>
-                                        <button onClick={this.addCourse}>Add Course</button>
-                                    </nav>
-                        }
-                        {
-                            this.state.layout === 'table' &&
-                                <CourseTableComponent
-                                showEditor={this.showEditor}
-                                deleteCourse={this.deleteCourse}
-                                updateCourse={this.updateCourse}
-                                updateForm={this.updateForm}
-                                courses={this.state.courses}
-                                //EditedCourseTitle={this.state.EditedCourseTitle}
-                                />
-                        }
-                        {
-                            this.state.layout === 'grid' &&
-                            <nav className="navbar navbar-light bg-light">
-                                <button onClick={this.toggle}><i className="fas fa-bars"></i></button>
-                                <input
-                                    onChange={(e) => this.updateForm({
-                                        newCourseTitle: e.target.value
-                                    })}
-                                    value={this.state.newCourseTitle}/>
-                                <button onClick={this.addCourse}>Add Course</button>
-                            </nav>
-                        }
-                        {
-                            this.state.layout === 'grid'&&
-                                <CourseGridComponent
-                                    showEditor={this.showEditor}
-                                    deleteCourse={this.deleteCourse}
-                                    updateCourse={this.updateCourse}
-                                    courses={this.state.courses}
-                                    updateForm={this.updateForm}
-                                    //EditedCourseTitle={this.state.EditedCourseTitle}
-                                />
-                        }
 
-                    </div>
-                }
+            </Router>
 
             </div>
-        )
+        );
     }
 }
 

@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/moduleActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/lessonReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/moduleReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseGridCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseGridCardComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseGridCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseGridCardComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseGridComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseTableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseTableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +58,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/CourseList" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Container" />
     </key>
   </component>
@@ -61,7 +77,7 @@
       <workItem from="1580626739890" duration="36397000" />
       <workItem from="1580792296942" duration="6000" />
       <workItem from="1580845170296" duration="11853000" />
-      <workItem from="1580944642208" duration="427000" />
+      <workItem from="1580944642208" duration="7521000" />
     </task>
     <servers />
   </component>

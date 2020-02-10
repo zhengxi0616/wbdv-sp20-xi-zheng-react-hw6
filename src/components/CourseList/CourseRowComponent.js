@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 class CourseRowComponent extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class CourseRowComponent extends React.Component {
                 <td className="wbdv-row wbdv-title"  onClick={this.handleClick}>
                     {
                         !this.state.editing &&
-                        <a onClick={this.props.showEditor} href="#">
+                        <a onClick={this.props.showEditor} href={`/course-editor/${this.props.course._id}`}>
                             {this.props.course.title}
                         </a>
                     }

@@ -4,6 +4,7 @@ import LessonTabsComponent from "./LessonTabsComponent";
 import TopicPillsComponent from "./TopicPillsComponent";
 import WidgetListComponent from "./WidgetListComponent";
 
+
 const CourseEditorComponent = ({hideEditor}) =>
     <div>
 
