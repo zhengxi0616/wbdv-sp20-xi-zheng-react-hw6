@@ -1,5 +1,5 @@
 
-import {LESSONS_API_URL, MODULES_LESSONS_API_URL} from "../common/constants";
+import {LESSONS_API_URL, MODULES_LESSONS_API_URL} from "../Common/Constants";
 
 export const findLessonsForModule = (moduleId) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jannunzi/module/${moduleId}/lessons`)

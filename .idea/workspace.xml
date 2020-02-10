@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseGridCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseGridCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseGridComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseGridComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseListComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseTableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseTableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/lessonReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/LessonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ModuleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -35,6 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -68,7 +78,7 @@
       <workItem from="1580626739890" duration="36397000" />
       <workItem from="1580792296942" duration="6000" />
       <workItem from="1580845170296" duration="11853000" />
-      <workItem from="1580944642208" duration="11332000" />
+      <workItem from="1580944642208" duration="16646000" />
     </task>
     <servers />
   </component>
@@ -80,6 +90,22 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="288" y="94" key="#ESLint/0.23.1440.806@0.23.1440.806" timestamp="1580855573788" />
+    <state width="1419" height="207" key="GridCell.Tab.0.bottom" timestamp="1581315849689">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1419" height="207" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1581315849689" />
+    <state width="1419" height="207" key="GridCell.Tab.0.center" timestamp="1581315849688">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1419" height="207" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1581315849688" />
+    <state width="1419" height="207" key="GridCell.Tab.0.left" timestamp="1581315849687">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1419" height="207" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1581315849687" />
+    <state width="1419" height="207" key="GridCell.Tab.0.right" timestamp="1581315849688">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1419" height="207" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1581315849688" />
     <state x="353" y="153" width="670" height="676" key="search.everywhere.popup" timestamp="1580683468816">
       <screen x="0" y="23" width="1440" height="806" />
     </state>

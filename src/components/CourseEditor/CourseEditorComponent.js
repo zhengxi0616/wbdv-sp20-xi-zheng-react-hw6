@@ -1,37 +1,40 @@
 import React from "react";
-import ModuleListComponent from "./ModuleListComponent";
+
 import LessonTabsComponent from "./LessonTabsComponent";
-import TopicPillsComponent from "./TopicPillsComponent";
-import WidgetListComponent from "./WidgetListComponent";
+import {Link} from "react-router-dom";
+import {combineReducers, createStore} from "redux";
+import {Provider} from "react-redux";
+
+import lessonReducer from '../../reducers/lessonReducer'
 
 
-const CourseEditorComponent = ({hideEditor}) =>
-    <div>
+const reducers = combineReducers({
+    lessonReducer
+})
 
-        <nav className="navbar navbar-light bg-light">
-            <div className="col-6 row">
-                <button onClick={hideEditor}>close</button>
-                <h3>Course Editor</h3>
-            </div>
-            <div className="col-5">
-                <LessonTabsComponent/>
-            </div>
-        </nav>
-        <div className="row">
-            <div className="col-3">
-                <ModuleListComponent/>
-            </div>
-            <div className="col-8">
-                <div className="container">
-                    <TopicPillsComponent/>
-                    <div align="right">
-                        <button type="button" className="btn-sm btn-success">Save</button>
-                        <text>Preview</text>
-                        <button type="button" className="btn"><i className="far fa-eye-slash"></i></button>
-                    </div>
-                    <WidgetListComponent/>
+const store = createStore(reducers)
+
+const CourseEditorComponent = ({hideEditor, match, courseId, moduleId, history}) =>
+    <Provider store={store}>
+        <div>
+            <button onClick={() => {
+                history.push("/")
+            }}>
+                Close
+            </button>
+            <Link to="/">
+                Back
+            </Link>
+            <h3>Course Editor {courseId}</h3>
+            <div className="row">
+
+                <div className="col-9">
+                    <LessonTabsComponent
+                        moduleId={moduleId}/>
+                    {/*<TopicPills/>*/}
+                    {/*<WidgetList/>*/}
                 </div>
             </div>
         </div>
-    </div>
+    </Provider>
 export default CourseEditorComponent

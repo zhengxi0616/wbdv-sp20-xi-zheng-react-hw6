@@ -25,7 +25,7 @@ class CourseRowComponent extends React.Component {
                 <td className="wbdv-row wbdv-title"  onClick={this.handleClick}>
                     {
                         !this.state.editing &&
-                        <a onClick={this.props.showEditor} href={`/course-editor/${this.props.course._id}`}>
+                        <a onClick={this.props.showEditor} href={`/course/${this.props.course._id}`}>
                             {this.props.course.title}
                         </a>
                     }
