@@ -1,5 +1,5 @@
 import React from "react";
-import ModuleList from "./ModuleListComponent";
+import ModuleListComponent from "./ModuleListComponent";
 import LessonTabsComponent from "./LessonTabsComponent";
 import {Link} from "react-router-dom";
 import {combineReducers, createStore} from "redux";
@@ -7,6 +7,7 @@ import {Provider} from "react-redux";
 import moduleReducer from '../../reducers/moduleReducer';
 import lessonReducer from '../../reducers/lessonReducer';
 import ModuleListContainer from "../../containers/ModuleListContainer";
+import LessonTabsContainer from "../../containers/LessonTabsContainer"
 
 
 const reducers = combineReducers({
@@ -15,7 +16,7 @@ const reducers = combineReducers({
 
 const store = createStore(reducers)
 
-const CourseEditorComponent = ({hideEditor, match, courseId, moduleId, history}) =>
+const CourseEditorComponent = ({hideEditor, match, lessonId, courseId, moduleId, history}) =>
     <Provider store={store}>
         <div>
             <button onClick={() => {
@@ -35,8 +36,11 @@ const CourseEditorComponent = ({hideEditor, match, courseId, moduleId, history})
                         courseId={courseId}/>
                 </div>
                 <div className="col-9">
-                    <LessonTabsComponent
-                        moduleId={moduleId}/>
+                    <LessonTabsContainer
+                        lessonId={lessonId}
+                        moduleId={moduleId}
+                        history={history}
+                        courseId={courseId}/>
                     {/*<TopicPills/>*/}
                     {/*<WidgetList/>*/}
                 </div>

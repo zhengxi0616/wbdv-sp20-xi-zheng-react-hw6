@@ -21,7 +21,7 @@ const dispatchToPropertyMapper = (dispatch) => ({
             .then(lessons =>
                 dispatch({
                     type: "FIND_LESSONS_FOR_MODULE",
-                    modules: lessons
+                    lessons: lessons
                 })),
 
     deleteLesson: (lessonId) =>
@@ -29,16 +29,16 @@ const dispatchToPropertyMapper = (dispatch) => ({
             .then(status =>
                 dispatch({
                     type: "DELETE_LESSON",
-                    moduleId: lessonId
+                    lessonId: lessonId
                 })),
 
     updateLesson: (lessonId, lesson) =>
-        service.updateLesson(moduleId,lesson)
+        service.updateLesson(lessonId,lesson)
             .then(status =>
                 dispatch({
                     type: "UPDATE_LESSON",
-                    module: lesson,
-                    moduleId: lessonId
+                    lesson: lesson,
+                    lessonId: lessonId
                 }))
 })
 

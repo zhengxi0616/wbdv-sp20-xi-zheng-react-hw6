@@ -13,7 +13,7 @@ export default class LessonTabsComponent extends React.Component {
     }
 
     state = {
-        selectedLessonId: '',
+        selectedLessonId: this.props.lessonId,
         editingLessonId: '',
         lesson: {
             title: '',
@@ -28,13 +28,29 @@ export default class LessonTabsComponent extends React.Component {
             <ul className="nav nav-tabs">
                 {
                     this.props.lessons && this.props.lessons.map(lesson =>
-                        <li className={`nav-item`}
-                            onClick={() => this.setState({selectedLessonId: lesson._id})}
-                            key={lesson._id}>
+                        <li className={`nav-item ${lesson._id === this.state.selectedLessonId ? 'active':''}`}
+                        onClick={() => {
+                            const lessonId = lesson._id
+                            this.props.history.push(`/course/${this.props.courseId}/module/${this.props.moduleId}/lesson/${lessonId}`)
+                            this.setState({
+                                selectedLessonId: lesson._id
+                            })}}
+                            key={module._id}>
                             <a className={`nav-link
                                             ${(this.state.editingLessonId === lesson._id || this.state.selectedLessonId === lesson._id)?'active':''}`}>
                                 {this.state.editingLessonId !== lesson._id &&
-                                <span>{lesson.title}</span>}
+                                <span>
+                                    {lesson.title}
+                                    <button onClick={() => {
+                                        const lessonId = lesson._id
+                                        this.props.history.push(`/course/${this.props.courseId}/module/${this.props.moduleId}/lesson/${lessonId}`)
+                                        this.setState({
+                                            editingLessonId: module._id
+                                        })
+                                    }}>
+                                    <i className="fas fa-edit"></i>
+                                    </button>
+                                </span>}
                                 {this.state.editingLessonId === lesson._id &&
                                 <input
                                     onChange={(e) => {
