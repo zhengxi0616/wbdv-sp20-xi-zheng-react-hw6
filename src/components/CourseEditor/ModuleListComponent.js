@@ -9,7 +9,8 @@ export default class ModuleListComponent extends React.Component {
     state = {
         activeModuleId: this.props.moduleId,
         editingModuleId: '',
-        EditedModuleTitle: 'New Module'
+        EditedModuleTitle: '',
+        NewModuleTile:'New Module'
     }
 
     render() {
@@ -68,14 +69,14 @@ export default class ModuleListComponent extends React.Component {
                 <li className="list-group-item">
                     <input
                         onChange={(e) => this.setState({
-                            EditedModuleTitle: e.target.value
+                            NewModuleTile: e.target.value
                         })}
-                        value={this.state.EditedModuleTitle}/>
+                        value={this.state.NewModuleTile}/>
                     <div className={"float-right"}>
                         <button onClick={
-                            () => this.props.createModule(this.props.courseId, {title: this.state.EditedModuleTitle})
+                            () => this.props.createModule(this.props.courseId, {title: this.state.NewModuleTile})
                         }>
-                            +
+                            <i className="fas fa-plus"></i>
                         </button>
                     </div>
                 </li>
