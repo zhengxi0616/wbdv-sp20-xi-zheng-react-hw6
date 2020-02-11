@@ -5,7 +5,7 @@ import TopicPillsComponent from "../components/CourseEditor/TopicPillsComponent"
 
 
 const stateToPropertyMapper = (state) => ({
-    topics: state.topics.topics
+    topics: state.topicReducer.topics
 })
 
 const dispatchToPropertyMapper = (dispatch) => ({
