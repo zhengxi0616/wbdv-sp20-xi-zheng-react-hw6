@@ -1,5 +1,4 @@
 import React from "react";
-
 export default class LessonTabsComponent extends React.Component {
 
     componentDidMount() {
@@ -78,7 +77,9 @@ export default class LessonTabsComponent extends React.Component {
                         </li>)
                 }
                 <li className="nav-item">
-                    <button onClick={() => this.props.createLesson(this.props.moduleId)}>+</button>
+                    <button onClick={() => this.props.createLesson(this.props.moduleId, {title: "New Lesson"})}>
+                        <i className="fas fa-plus"></i>
+                    </button>
                 </li>
             </ul>
         )
