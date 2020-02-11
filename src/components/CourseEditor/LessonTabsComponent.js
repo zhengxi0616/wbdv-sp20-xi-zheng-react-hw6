@@ -19,7 +19,6 @@ export default class LessonTabsComponent extends React.Component {
             title: '',
             _id: ''
         },
-        EditLessonTitle: '',
         NewLessonTile:'New Module'
     }
 
@@ -45,13 +44,14 @@ export default class LessonTabsComponent extends React.Component {
                                         const lessonId = lesson._id
                                         this.props.history.push(`/course/${this.props.courseId}/module/${this.props.moduleId}/lesson/${lessonId}`)
                                         this.setState({
-                                            editingLessonId: module._id
+                                            editingLessonId: lesson._id
                                         })
                                     }}>
                                     <i className="fas fa-edit"></i>
                                     </button>
                                 </span>}
                                 {this.state.editingLessonId === lesson._id &&
+                                <span>
                                 <input
                                     onChange={(e) => {
                                         const newTitle = e.target.value
@@ -62,36 +62,23 @@ export default class LessonTabsComponent extends React.Component {
                                             }
                                         }))
                                     }}
-                                    value={this.state.lesson.title}/>}
-                                <button onClick={() =>
-                                {
-                                    this.props.updateLesson(this.state.lesson)
-                                        .then(() =>
-                                            this.setState({
-                                                editingLessonId: ''
-                                            })
-                                        )
-                                }
-                                }>
-                                    Save
-                                </button>
-                                <button onClick={
-                                    () => this.props.deleteLesson(lesson._id)}>
-                                    X
-                                </button>
-                                <button onClick={() => {
-                                    this.setState({
-                                        lesson: lesson,
-                                        editingLessonId: lesson._id
-                                    })
-                                }}>
-                                    Edit
-                                </button>
+                                    value={this.state.lesson.title}/>
+                                <div className={"float-right"}>
+                                    <button onClick={() => this.props.updateLesson(lesson._id, {title: this.state.lesson.title})
+                                    .then(() => this.setState({editingModuleId: ''}))}>
+                                        <i className="fas fa-save"></i>
+                                    </button>
+                                    <button onClick={() =>this.props.deleteLesson(lesson._id)}>
+                                        <i className="far fa-window-close"></i>
+                                    </button>
+                                </div>
+                                </span>}
+
                             </a>
                         </li>)
                 }
                 <li className="nav-item">
-                    <button onClick={() => this.props.addLesson(this.props.moduleId)}>+</button>
+                    <button onClick={() => this.props.createLesson(this.props.moduleId)}>+</button>
                 </li>
             </ul>
         )
