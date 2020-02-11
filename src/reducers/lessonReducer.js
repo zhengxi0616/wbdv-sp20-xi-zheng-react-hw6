@@ -25,10 +25,6 @@ const lessonReducer = (state = {lessons: []}, action) => {
             return {
                 lessons: action.lessons
             }
-        case 'FIND_ALL_LESSONS':
-            return {
-                lessons: action.lessons
-            }
         default:
             return state
     }
