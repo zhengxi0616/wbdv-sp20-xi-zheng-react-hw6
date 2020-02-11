@@ -9,7 +9,7 @@ export default class ModuleListComponent extends React.Component {
     state = {
         activeModuleId: this.props.moduleId,
         editingModuleId: '',
-        EditedModuleTitle: '',
+        EditedModuleTitle: ''
     }
 
     render() {
@@ -40,9 +40,8 @@ export default class ModuleListComponent extends React.Component {
                                 </div>
                             </span>
                             }
-                            {module._id === this.state.editingModuleId &&
+                            {this.state.editingModuleId === module._id &&
                             <span>
-
                                 <input
                                     onChange={(e) => this.setState({
                                         EditedModuleTitle: e.target.value
@@ -52,7 +51,8 @@ export default class ModuleListComponent extends React.Component {
 
                                 <div className={"float-right"}>
                                     <button onClick={() => this.props.updateModule(module._id, {title: this.state.EditedModuleTitle})
-                                        .then(() => this.setState({editingModuleId: ''}))}>
+                                        .then(() => this.setState({editingModuleId: ''}))
+                                        .then(() => this.props.findModulesForCourse(this.props.courseId))}>
                                         <i className="fas fa-save"></i>
                                     </button>
                                     <button onClick={() =>this.props.deleteModule(module._id)}>

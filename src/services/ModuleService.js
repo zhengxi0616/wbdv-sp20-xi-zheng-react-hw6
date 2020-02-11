@@ -22,14 +22,16 @@ export const deleteModule = (moduleId) =>
         method: 'DELETE'
     }).then(response => response.json())
 
-export const updateModule = async (moduleId, module) =>
-    fetch(`${MODULES_API_URL}/${moduleId}`, {
+export const updateModule = async (moduleId, module) => {
+    const response = await fetch(`${MODULES_API_URL}/${moduleId}`, {
         method: 'PUT',
         body: JSON.stringify(module),
         headers: {
             'content-type': 'application/json'
         }
-    }).then(response => response.json())
+    })
+    return await response.json()
+}
 
 
 export default {

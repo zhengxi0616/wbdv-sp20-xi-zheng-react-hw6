@@ -14,7 +14,7 @@ const dispatchToPropertyMapper = (dispatch) => ({
             .then(actualTopic =>
                 dispatch({
                     type: "CREATE_TOPIC",
-                    lesson: actualTopic
+                    topic: actualTopic
                 })),
     findTopicsForLesson: (lessonId) =>
         service.findTopicsForLesson(lessonId)
