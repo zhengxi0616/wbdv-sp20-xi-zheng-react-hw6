@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/ModuleListContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/moduleActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/moduleActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/LessonTabsComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseGridCardComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseGridCardComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManagerContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/lessonReducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/LessonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LessonService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/ModuleListComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/LessonTabsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LessonTabsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/moduleReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/moduleReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CourseService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CourseService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ModuleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ModuleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -78,7 +75,7 @@
       <workItem from="1580626739890" duration="36397000" />
       <workItem from="1580792296942" duration="6000" />
       <workItem from="1580845170296" duration="11853000" />
-      <workItem from="1580944642208" duration="16646000" />
+      <workItem from="1580944642208" duration="34838000" />
     </task>
     <servers />
   </component>
@@ -90,6 +87,10 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="288" y="94" key="#ESLint/0.23.1440.806@0.23.1440.806" timestamp="1580855573788" />
+    <state x="262" y="160" key="#Inspections" timestamp="1581388782090">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="262" y="160" key="#Inspections/0.23.1440.806@0.23.1440.806" timestamp="1581388782090" />
     <state width="1419" height="207" key="GridCell.Tab.0.bottom" timestamp="1581315849689">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
@@ -106,9 +107,10 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state width="1419" height="207" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1581315849688" />
-    <state x="353" y="153" width="670" height="676" key="search.everywhere.popup" timestamp="1580683468816">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="353" y="153" width="670" height="678" key="search.everywhere.popup" timestamp="1581325950202">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
     <state x="353" y="153" width="670" height="676" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1580683468816" />
+    <state x="353" y="153" width="670" height="678" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1581325950202" />
   </component>
 </project>

@@ -30,9 +30,7 @@ class LessonTabsComponent extends React.Component {
                 {
                     this.props.lessons && this.props.lessons.map(lesson =>
                         <li className={`nav-item`}
-                            onClick={() => this.setState({
-                                selectedLessonId: lesson._id
-                            })}
+                            onClick={() => this.setState({selectedLessonId: lesson._id})}
                             key={lesson._id}>
                             <a className={`nav-link
                                             ${(this.state.editingLessonId === lesson._id || this.state.selectedLessonId === lesson._id)?'active':''}`}>
