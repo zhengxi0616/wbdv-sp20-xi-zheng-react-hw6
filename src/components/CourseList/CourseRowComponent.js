@@ -21,8 +21,8 @@ class CourseRowComponent extends React.Component {
 
     render() {
         return(
-            <tr className={this.state.highlighting ? "highlightTrue": "highlightFalse"}>
-                <td className="wbdv-row wbdv-title"  onClick={this.handleClick}>
+            <tr className={this.state.highlighting ? "highlightTrue": "highlightFalse"} onClick={this.handleClick}>
+                <td className="wbdv-row wbdv-title"  >
                     {
                         !this.state.editing &&
                         <a onClick={this.props.showEditor} href={`/course/${this.props.course._id}`}>
@@ -40,13 +40,13 @@ class CourseRowComponent extends React.Component {
                     }
 
                 </td>
-                <td className="wbdv-row wbdv-owner"  onClick={this.handleClick}>
+                <td className="wbdv-row wbdv-owner" >
                     me
                 </td>
-                <td className="wbdv-row wbdv-modified-date"  onClick={this.handleClick}>
+                <td className="wbdv-row wbdv-modified-date"  >
                     6:45 PM
                 </td>
-                <td className="wbdv-row wbdv-modified-date"  onClick={this.handleClick}>
+                <td className="wbdv-row wbdv-modified-date" >
                    &nbsp;
                 </td>
 

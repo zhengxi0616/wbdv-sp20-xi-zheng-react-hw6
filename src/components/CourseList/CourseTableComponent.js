@@ -23,7 +23,7 @@ const CourseTableComponent =
                         onChange={updateFormState}
                         value={newCourseTitle}
                         placeholder="New Course Title"/>
-                    <button onClick={addCourse}>Add Course</button>
+                    <button onClick={addCourse} >Add Course</button>
                 </nav>
 
 

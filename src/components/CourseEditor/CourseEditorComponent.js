@@ -40,9 +40,6 @@ export default class CourseEditorComponent extends React.Component {
                         }}>
                             X
                         </button>
-                        <Link className={"form-control"} to="/">
-                            Back
-                        </Link>
                         <h5>Course Editor {this.state.course.title}</h5>
                     </form>
                 </nav>
