@@ -37,6 +37,6 @@ export const findAllCourses = async () => {
 
 export const findCourseById = async (courseId) =>
 {
-    return fetch(`${COURSES_API_URL}/${courseId}`)
+    return await fetch(`${COURSES_API_URL}/${courseId}`)
         .then(response => response.json())
 }

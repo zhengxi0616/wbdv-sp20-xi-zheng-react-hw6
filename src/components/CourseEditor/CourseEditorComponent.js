@@ -1,6 +1,4 @@
 import React from "react";
-import ModuleListComponent from "./ModuleListComponent";
-import LessonTabsComponent from "./LessonTabsComponent";
 import {Link} from "react-router-dom";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
@@ -10,8 +8,8 @@ import topicReducer from "../../reducers/topicReducer";
 import ModuleListContainer from "../../containers/ModuleListContainer";
 import LessonTabsContainer from "../../containers/LessonTabsContainer"
 import TopicPillsContainer from "../../containers/TopicPillsContainer";
-import CourseRowComponent from "../CourseList/CourseRowComponent";
 
+import {findCourseById} from "../../services/CourseService";
 
 const reducers = combineReducers({
     moduleReducer,lessonReducer,topicReducer
@@ -19,46 +17,61 @@ const reducers = combineReducers({
 
 const store = createStore(reducers)
 
-const CourseEditorComponent = ({hideEditor, match, lessonId, courseId, moduleId, topicId, history}) =>
+export default class CourseEditorComponent extends React.Component {
+    //{hideEditor, match, course, lessonId, courseId, moduleId, topicId, history}) =>
+    state={course:{title:""}}
 
-    <Provider store={store}>
-        <div>
-            <nav className="navbar navbar-light bg-light">
-                <form className="form-inline">
-                    <button className={"form-control"} onClick={() => {
-                        history.push("/")
-                    }}>
-                        X
-                    </button>
-                    <Link className={"form-control"} to="/">
-                        Back
-                    </Link>
-                    <h5 >Course Editor {courseId}</h5>
-                </form>
-            </nav>
-            <div className="row">
-                <div className="col-3">
-                    <ModuleListContainer
-                        moduleId={moduleId}
-                        history={history}
-                        courseId={courseId}/>
-                </div>
-                <div className="col-9">
-                    <LessonTabsContainer
-                        lessonId={lessonId}
-                        moduleId={moduleId}
-                        history={history}
-                        courseId={courseId}/>
-                    <TopicPillsContainer
-                        topicId={topicId}
-                        lessonId={lessonId}
-                        moduleId={moduleId}
-                        history={history}
-                        courseId={courseId}/>
-                    {/*<TopicPills/>*/}
-                    {/*<WidgetList/>*/}
+    componentDidMount= async () =>{
+        this.setState({
+            course: await findCourseById(this.props.courseId)
+        })
+        // console.log(await findCourseById(this.props.courseId))
+
+    }
+
+    render(){
+        return(
+        <Provider store={store}>
+            <div>
+                <nav className="navbar navbar-light bg-light">
+                    <form className="form-inline">
+                        <button className={"form-control"} onClick={() => {
+                            this.props.history.push("/")
+                        }}>
+                            X
+                        </button>
+                        <Link className={"form-control"} to="/">
+                            Back
+                        </Link>
+                        <h5>Course Editor {this.state.course.title}</h5>
+                    </form>
+                </nav>
+                <div className="row">
+                    <div className="col-3">
+                        <ModuleListContainer
+                            moduleId={this.props.moduleId}
+                            history={this.props.history}
+                            courseId={this.props.courseId}/>
+                    </div>
+                    <div className="col-9">
+                        <LessonTabsContainer
+                            lessonId={this.props.lessonId}
+                            moduleId={this.props.moduleId}
+                            history={this.props.history}
+                            courseId={this.props.courseId}/>
+                        <TopicPillsContainer
+                            topicId={this.props.topicId}
+                            lessonId={this.props.lessonId}
+                            moduleId={this.props.moduleId}
+                            history={this.props.history}
+                            courseId={this.props.courseId}/>
+                        {/*<TopicPills/>*/}
+                        {/*<WidgetList/>*/}
+                    </div>
                 </div>
             </div>
-        </div>
-    </Provider>
-export default CourseEditorComponent
+        </Provider>
+    )
+}
+}
+
