@@ -1,9 +1,33 @@
 import React from "react";
 import CourseRowComponent from "./CourseRowComponent";
+import {Link} from "react-router-dom";
 
-const CourseTableComponent = ({courses, deleteCourse, showEditor, updateCourse}) =>
+const CourseTableComponent =
+    ({
+         updateFormState,
+         newCourseTitle,
+         addCourse,
+         toggle,
+         deleteCourse,
+         courses,
+         layout,
+         showEditor,
+         updateCourse,
+     }) =>
+        <div>
+                <nav className="navbar navbar-light bg-light">
+                    <Link to={`/grid`}>
+                        <button className="buttonFalse" onClick={toggle} href={`/grid`}><i className="fas fa-grip-horizontal"></i></button>
+                    </Link>
+                    <input
+                        onChange={updateFormState}
+                        value={newCourseTitle}
+                        placeholder="New Course Title"/>
+                    <button onClick={addCourse}>Add Course</button>
+                </nav>
 
-    <div>
+
+
         <h5>Total Managed Course: {courses.length}</h5>
         <div className="table-responsive-sm">
 

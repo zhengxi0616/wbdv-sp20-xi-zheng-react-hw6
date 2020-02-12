@@ -2,8 +2,8 @@ import React from "react";
 
 import CourseEditorComponent from "../components/CourseEditor/CourseEditorComponent";
 import {updateCourse, findAllCourses, deleteCourse, createCourse} from "../services/CourseService";
-import CourseListComponent from "../components/CourseList/CourseListComponent";
-
+import CourseTableComponent from "../components/CourseList/CourseTableComponent";
+import CourseGridComponent from "../components/CourseList/CourseGridComponent";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 class CourseManagerContainer extends React.Component {
@@ -85,7 +85,38 @@ class CourseManagerContainer extends React.Component {
                     path="/"
                     exact={true}
                     render={() =>
-                        <CourseListComponent
+                        <CourseTableComponent
+                            updateFormState={this.updateFormState}
+                            newCourseTitle={this.state.newCourseTitle}
+                            addCourse={this.addCourse}
+                            toggle={this.toggle}
+                            deleteCourse={this.deleteCourse}
+                            courses={this.state.courses}
+                            layout={this.state.layout}
+                            showEditor={this.showEditor}
+                            updateCourse={this.updateCourse}/>
+                    }/>
+                <Route
+                    path="/grid"
+                    exact={true}
+                    render={() =>
+                        <CourseGridComponent
+                            updateFormState={this.updateFormState}
+                            newCourseTitle={this.state.newCourseTitle}
+                            addCourse={this.addCourse}
+                            toggle={this.toggle}
+                            deleteCourse={this.deleteCourse}
+                            courses={this.state.courses}
+                            layout={this.state.layout}
+                            showEditor={this.showEditor}
+                            updateCourse={this.updateCourse}/>
+                    }/>
+
+                <Route
+                    path="/table"
+                    exact={true}
+                    render={() =>
+                        <CourseTableComponent
                             updateFormState={this.updateFormState}
                             newCourseTitle={this.state.newCourseTitle}
                             addCourse={this.addCourse}
