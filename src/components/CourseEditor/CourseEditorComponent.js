@@ -23,17 +23,19 @@ const CourseEditorComponent = ({hideEditor, match, lessonId, courseId, moduleId,
 
     <Provider store={store}>
         <div>
-            <div className={"col-6 row"}>
-                <button onClick={() => {
-                    history.push("/")
-                }}>
-                    X
-                </button>
-                <Link to="/">
-                    Back
-                </Link>
-                <h5>Course Editor {courseId}</h5>
-            </div>
+            <nav className="navbar navbar-light bg-light">
+                <form className="form-inline">
+                    <button className={"form-control"} onClick={() => {
+                        history.push("/")
+                    }}>
+                        X
+                    </button>
+                    <Link className={"form-control"} to="/">
+                        Back
+                    </Link>
+                    <h5 >Course Editor {courseId}</h5>
+                </form>
+            </nav>
             <div className="row">
                 <div className="col-3">
                     <ModuleListContainer
