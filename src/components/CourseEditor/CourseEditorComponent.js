@@ -10,6 +10,7 @@ import topicReducer from "../../reducers/topicReducer";
 import ModuleListContainer from "../../containers/ModuleListContainer";
 import LessonTabsContainer from "../../containers/LessonTabsContainer"
 import TopicPillsContainer from "../../containers/TopicPillsContainer";
+import CourseRowComponent from "../CourseList/CourseRowComponent";
 
 
 const reducers = combineReducers({
@@ -19,17 +20,20 @@ const reducers = combineReducers({
 const store = createStore(reducers)
 
 const CourseEditorComponent = ({hideEditor, match, lessonId, courseId, moduleId, topicId, history}) =>
+
     <Provider store={store}>
         <div>
-            <button onClick={() => {
-                history.push("/")
-            }}>
-                Close
-            </button>
-            <Link to="/">
-                Back
-            </Link>
-            <h3>Course Editor {courseId}</h3>
+            <div className={"col-6 row"}>
+                <button onClick={() => {
+                    history.push("/")
+                }}>
+                    X
+                </button>
+                <Link to="/">
+                    Back
+                </Link>
+                <h5>Course Editor {courseId}</h5>
+            </div>
             <div className="row">
                 <div className="col-3">
                     <ModuleListContainer
