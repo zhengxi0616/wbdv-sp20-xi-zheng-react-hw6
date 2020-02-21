@@ -1,54 +1,141 @@
 import React from "react";
+import HeadingWidgetComponent from "./HeadingWidgetComponent";
+import {deleteWidget} from "../../services/WidgetService";
+import ParagraphWidgetComponent from "./ParagraphWidgetComponent";
 
-const WidgetListComponent = () =>
-    <div class="col-lg-14">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3>Heading Widget</h3>
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="button"><i class="fas fa-arrow-down"></i></button>
-                        <button type="button"><i class="fas fa-arrow-up"></i></button>
-                    </div>
-                    <div class="col-sm-3">
-                        <select class="form-control wbdv-field wbdv-role" id="roleFld">
-                            <option value="heading">
-                                Heading
-                            </option>
-                            <option value="text">
-                                Text
-                            </option>
-                        </select>
-                    </div>
-                    <div class="col-sm-1">
-                        <button type="button" class="btn"><i class="fas fa-times"></i></button>
-                    </div>
-                </div>
+export default class WidgetListComponent extends React.Component {
+    componentDidMount() {
+        this.props.findWidgetsForTopic(this.props.topicId)
+    }
 
-                    <div class="col-lg-12">
-                        <input class="form-control" type="text" placeholder="Heading 1"/>
-                    </div>
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.topicId !== prevProps.topicId) {
+            this.props.findWidgetsForTopic(this.props.topicId)
+        }
+    }
 
-                    <div class="col-lg-12">
-                        <input class="form-control" type="text" placeholder="Heading text"/>
-                    </div>
-                    <div class="col-lg-12">
-                        <input class="form-control" type="text" placeholder="Widget text"/>
-                    </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <h5>Preview</h5>
-                    </div>
-                </div>
-                    <h1>Heading Text</h1>
-            </li>
-        </ul>
-    </div>
+    state = {
+        preview: true,
+        widget: {
+            value: '',
+            name: '',
+            type: 'Heading',
+            size: ''
+        }
+    }
+
+    render() {
+        return (
+            <span>
+
+            <ul className="list-group">
+                <li className={"list-group-item float-left"}>
+                    <button onClick={
+                        () => this.props.createWidget(this.props.topicId, {
+                            value: "New Widget Content",
+                            name: "Widget Name",
+                            id: Date.now().toString(),
+                            type: "Heading",
+                            size: 2
+                        })
+                    }>
+                        <i className="fas fa-plus"></i>
+                    </button>
+
+                    <span>Preview</span>
+                    {this.state.preview === true &&
+                    <button onClick={() => this.setState({
+                        preview: false
+                    })}><i className="fas fa-toggle-on"></i></button>
+                    }
+                    {this.state.preview === false &&
+                    <button onClick={() => this.setState({
+                        preview: true
+                    })}><i className="fas fa-toggle-off"></i></button>
+                    }
+                </li>
+
+                {this.state.preview === true &&
+                <span>
+                        {this.props.widgets.map(widget =>
+                            <li className={"list-group-item"}>
+                                {widget.type === "Heading" &&
+                                <span>
+                                    {
+                                        widget.size == 1 &&
+                                            <h1>{widget.value}</h1>
+                                    }
+                                    {widget.size == 2 &&
+                                        <h2>{widget.value}</h2>
+                                    }
+                                    {widget.size == 3 &&
+                                        <h3>{widget.value}</h3>
+                                    }
+                                    {widget.size == 4 &&
+                                        <h4>{widget.value}</h4>
+                                    }
+                                    {widget.size == 5 &&
+                                        <h5>{widget.value}</h5>
+                                    }
+                                    {widget.size == 6 &&
+                                        <h6>{widget.value}</h6>
+                                    }
+                                </span>
+                                }
+                                {widget.type === "Paragraph" &&
+                                <span>
+                                    <p>{widget.value}</p>
+                                </span>
+                                }
+
+                            </li>
+                        )
+                        }
+                </span>
+                }
 
 
+                {this.state.preview === false &&
+                <span>
+                        {this.props.widgets.map(widget =>
+                            <li className={"list-group-item"}>
+                                <div className={"row"}>
+                                    <h4 className={"col-6"}>{widget.name}</h4>
+                                    <div className={"col-2"}>
+                                        <button type="button"><i className="fas fa-arrow-down"></i></button>
+                                        <button type="button"><i className="fas fa-arrow-up"></i></button>
+                                    </div>
 
-export default WidgetListComponent
+                                    <div className={"col-2"}>
+                                        <button className={"btn-sm"}>
+                                            <i className="fas fa-save"></i>
+                                        </button>
+
+                                        <button className={"btn-sm"} onClick={() => this.props.deleteWidget(widget.id)
+                                            .then(() => this.props.findWidgetsForTopic(widget.topicId))}><i
+                                            className="far fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                                {widget.type === "Heading" &&
+                                <HeadingWidgetComponent
+                                    widget={widget}
+                                    updateWidget={this.props.updateWidget}/>
+                                }
+                                {widget.type === "Paragraph" &&
+                                <ParagraphWidgetComponent
+                                    widget={widget}
+                                    updateWidget={this.props.updateWidget}/>
+                                }
+
+                            </li>)
+                        }
+                    </span>
+                }
+            </ul>
+            </span>
+
+        )
+
+    }
+}
+

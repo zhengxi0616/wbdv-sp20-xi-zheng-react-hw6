@@ -5,14 +5,16 @@ import {Provider} from "react-redux";
 import moduleReducer from '../../reducers/moduleReducer';
 import lessonReducer from '../../reducers/lessonReducer';
 import topicReducer from "../../reducers/topicReducer";
+import widgetReducer from "../../reducers/widgetReducer";
 import ModuleListContainer from "../../containers/ModuleListContainer";
 import LessonTabsContainer from "../../containers/LessonTabsContainer"
 import TopicPillsContainer from "../../containers/TopicPillsContainer";
+import WidgetContainer from "../../containers/WidgetContainer";
 
 import {findCourseById} from "../../services/CourseService";
 
 const reducers = combineReducers({
-    moduleReducer,lessonReducer,topicReducer
+    moduleReducer,lessonReducer,topicReducer,widgetReducer
 })
 
 const store = createStore(reducers)
@@ -62,8 +64,10 @@ export default class CourseEditorComponent extends React.Component {
                             moduleId={this.props.moduleId}
                             history={this.props.history}
                             courseId={this.props.courseId}/>
-                        {/*<TopicPills/>*/}
-                        {/*<WidgetList/>*/}
+                        <WidgetContainer
+                            topicId={this.props.topicId}
+                            history={this.props.history}/>
+
                     </div>
                 </div>
             </div>

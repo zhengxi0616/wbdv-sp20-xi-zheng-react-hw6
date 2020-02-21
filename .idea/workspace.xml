@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/HeadingWidgetComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/ParagraphWidgetComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/WidgetContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/widgetReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/WidgetService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseList/CourseRowComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Common/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +73,8 @@
       <workItem from="1580626739890" duration="36397000" />
       <workItem from="1580792296942" duration="6000" />
       <workItem from="1580845170296" duration="11853000" />
-      <workItem from="1580944642208" duration="59891000" />
+      <workItem from="1580944642208" duration="60272000" />
+      <workItem from="1582234897918" duration="25878000" />
     </task>
     <servers />
   </component>
@@ -87,22 +94,22 @@
       <screen x="0" y="23" width="1440" height="808" />
     </state>
     <state x="346" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.808@0.23.1440.808" timestamp="1581446964001" />
-    <state width="1419" height="207" key="GridCell.Tab.0.bottom" timestamp="1581315849689">
+    <state width="1419" height="207" key="GridCell.Tab.0.bottom" timestamp="1581546692262">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1581315849689" />
-    <state width="1419" height="207" key="GridCell.Tab.0.center" timestamp="1581315849688">
+    <state width="1419" height="207" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1581546692262" />
+    <state width="1419" height="207" key="GridCell.Tab.0.center" timestamp="1581546692261">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1581315849688" />
-    <state width="1419" height="207" key="GridCell.Tab.0.left" timestamp="1581315849687">
+    <state width="1419" height="207" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1581546692261" />
+    <state width="1419" height="207" key="GridCell.Tab.0.left" timestamp="1581546692260">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1581315849687" />
-    <state width="1419" height="207" key="GridCell.Tab.0.right" timestamp="1581315849688">
+    <state width="1419" height="207" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1581546692260" />
+    <state width="1419" height="207" key="GridCell.Tab.0.right" timestamp="1581546692261">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
-    <state width="1419" height="207" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1581315849688" />
+    <state width="1419" height="207" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1581546692261" />
     <state x="353" y="153" width="670" height="676" key="search.everywhere.popup" timestamp="1581395733927">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
@@ -115,8 +122,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/containers/LessonTabsContainer.js</url>
           <line>1</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/services/ModuleService.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
