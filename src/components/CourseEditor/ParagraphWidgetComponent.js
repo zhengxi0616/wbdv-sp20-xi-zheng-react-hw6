@@ -25,7 +25,7 @@ export default class ParagraphWidgetComponent extends React.Component {
                     <div>&nbsp;</div>
                 </div>
                         <div className="col-lg-12">
-                            <input className="form-control" type="text" placeholder="Paragraph Name"
+                            <input className="form-control" type="text" value={this.props.widget.name}
                                    onChange={event => this.props.updateWidget(this.props.widget.id,
                                        {...this.props.widget,
                                            name:event.target.value
@@ -33,7 +33,7 @@ export default class ParagraphWidgetComponent extends React.Component {
                         </div>
                         <div>&nbsp;</div>
                         <div className="col-lg-12">
-                            <input className="form-control" type="text" placeholder="Widget text"
+                            <input className="form-control" type="text" value={this.props.widget.value}
                                    onChange={event => this.props.updateWidget(this.props.widget.id,
                                        {...this.props.widget,
                                            value:event.target.value
