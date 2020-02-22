@@ -33,15 +33,7 @@ const dispatchToPropertyMapper = (dispatch) => ({
                     type: "DELETE_WIDGET",
                     widgetId: widgetId
                 })),
-    //
-    // updateWidget: (widgetId, updateWidget) =>
-    //     service.updateWidget(widgetId,updateWidget)
-    //         .then(status =>
-    //             dispatch({
-    //                 type: "UPDATE_WIDGET",
-    //                 widget: updateWidget,
-    //                 widgetId: widgetId
-    //             }))
+
     updateWidget: (widgetId, updateWidget) =>
         dispatch({
             type: "UPDATE_WIDGET",
