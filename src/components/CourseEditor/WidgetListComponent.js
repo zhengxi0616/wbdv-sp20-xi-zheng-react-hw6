@@ -1,6 +1,6 @@
 import React from "react";
 import HeadingWidgetComponent from "./HeadingWidgetComponent";
-import {deleteWidget} from "../../services/WidgetService";
+import {deleteWidget, updateWidget} from "../../services/WidgetService";
 import ParagraphWidgetComponent from "./ParagraphWidgetComponent";
 
 export default class WidgetListComponent extends React.Component {
@@ -42,7 +42,9 @@ export default class WidgetListComponent extends React.Component {
                         <i className="fas fa-lg fa-plus"></i>
                     </button>
 
-                    <button className={"btn-sm col-1"}>
+                    <button className={"btn-sm col-1"} onClick={
+                        this.props.widgets.map(widget=>updateWidget(widget.id,widget))
+                    }>
                                             <i className="fas fa-lg fa-save"></i>
                     </button>
 
