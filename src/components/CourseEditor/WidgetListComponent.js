@@ -30,7 +30,7 @@ export default class WidgetListComponent extends React.Component {
 
             <ul className="list-group">
                 <li className={"list-group-item float-left"}>
-                    <button onClick={
+                    <button className={"btn-sm col-1"} onClick={
                         () => this.props.createWidget(this.props.topicId, {
                             value: "New Widget Content",
                             name: "Widget Name",
@@ -39,19 +39,23 @@ export default class WidgetListComponent extends React.Component {
                             size: 2
                         })
                     }>
-                        <i className="fas fa-plus"></i>
+                        <i className="fas fa-lg fa-plus"></i>
                     </button>
 
-                    <span>Preview</span>
+                    <button className={"btn-sm col-1"}>
+                                            <i className="fas fa-lg fa-save"></i>
+                    </button>
+
+                    <span className={"col-3"}>Preview</span>
                     {this.state.preview === true &&
-                    <button onClick={() => this.setState({
+                    <button className={"btn-sm col-1"} onClick={() => this.setState({
                         preview: false
-                    })}><i className="fas fa-toggle-on"></i></button>
+                    })}><i className="fa fa-lg fa-toggle-on"></i></button>
                     }
                     {this.state.preview === false &&
-                    <button onClick={() => this.setState({
+                    <button className={"btn-sm col-1"} onClick={() => this.setState({
                         preview: true
-                    })}><i className="fas fa-toggle-off"></i></button>
+                    })}><i className="fa fa-lg fa-toggle-off"></i></button>
                     }
                 </li>
 
@@ -100,16 +104,13 @@ export default class WidgetListComponent extends React.Component {
                         {this.props.widgets.map(widget =>
                             <li className={"list-group-item"}>
                                 <div className={"row"}>
-                                    <h4 className={"col-6"}>{widget.name}</h4>
+                                    <h4 className={"col-7"}>{widget.name}</h4>
                                     <div className={"col-2"}>
                                         <button type="button"><i className="fas fa-arrow-down"></i></button>
                                         <button type="button"><i className="fas fa-arrow-up"></i></button>
                                     </div>
 
                                     <div className={"col-2"}>
-                                        <button className={"btn-sm"}>
-                                            <i className="fas fa-save"></i>
-                                        </button>
 
                                         <button className={"btn-sm"} onClick={() => this.props.deleteWidget(widget.id)
                                             .then(() => this.props.findWidgetsForTopic(widget.topicId))}><i
