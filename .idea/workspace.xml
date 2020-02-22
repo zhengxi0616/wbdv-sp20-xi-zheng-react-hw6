@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/HeadingWidgetComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/ParagraphWidgetComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/WidgetContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/widgetReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/WidgetService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Common/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Common/Constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/CourseEditorComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" afterDir="false" />
-    </list>
+    <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +64,7 @@
       <workItem from="1580792296942" duration="6000" />
       <workItem from="1580845170296" duration="11853000" />
       <workItem from="1580944642208" duration="60272000" />
-      <workItem from="1582234897918" duration="25878000" />
+      <workItem from="1582234897918" duration="26076000" />
     </task>
     <servers />
   </component>

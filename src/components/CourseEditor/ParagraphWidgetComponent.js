@@ -25,7 +25,7 @@ export default class ParagraphWidgetComponent extends React.Component {
                     <div>&nbsp;</div>
                 </div>
                         <div className="col-lg-12">
-                            <input className="form-control" type="text" placeholder="Heading 1"
+                            <input className="form-control" type="text" placeholder="Paragraph Name"
                                    onChange={event => this.props.updateWidget(this.props.widget.id,
                                        {...this.props.widget,
                                            name:event.target.value
