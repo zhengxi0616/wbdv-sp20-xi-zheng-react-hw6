@@ -1,6 +1,6 @@
 import React from "react";
 import HeadingWidgetComponent from "./HeadingWidgetComponent";
-import {deleteWidget, updateWidget} from "../../services/WidgetService";
+import {updateWidget} from "../../services/WidgetService";
 import ParagraphWidgetComponent from "./ParagraphWidgetComponent";
 
 export default class WidgetListComponent extends React.Component {
@@ -42,9 +42,10 @@ export default class WidgetListComponent extends React.Component {
                         <i className="fas fa-lg fa-plus"></i>
                     </button>
 
-                    <button className={"btn-sm col-1"} onClick={
-                        this.props.widgets.map(widget=>updateWidget(widget.id,widget))
-                    }>
+                    <button className={"btn-sm col-1"}
+                            onClick={
+                                ()=>this.props.widgets.map(widget => updateWidget(widget.id, widget))}
+                    >
                                             <i className="fas fa-lg fa-save"></i>
                     </button>
 
@@ -69,22 +70,22 @@ export default class WidgetListComponent extends React.Component {
                                 <span>
                                     {
                                         widget.size == 1 &&
-                                            <h1>{widget.value}</h1>
+                                        <h1>{widget.value}</h1>
                                     }
                                     {widget.size == 2 &&
-                                        <h2>{widget.value}</h2>
+                                    <h2>{widget.value}</h2>
                                     }
                                     {widget.size == 3 &&
-                                        <h3>{widget.value}</h3>
+                                    <h3>{widget.value}</h3>
                                     }
                                     {widget.size == 4 &&
-                                        <h4>{widget.value}</h4>
+                                    <h4>{widget.value}</h4>
                                     }
                                     {widget.size == 5 &&
-                                        <h5>{widget.value}</h5>
+                                    <h5>{widget.value}</h5>
                                     }
                                     {widget.size == 6 &&
-                                        <h6>{widget.value}</h6>
+                                    <h6>{widget.value}</h6>
                                     }
                                 </span>
                                 }
