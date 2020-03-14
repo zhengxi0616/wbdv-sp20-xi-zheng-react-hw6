@@ -38,10 +38,14 @@ class CourseManagerContainer extends React.Component {
         });
 
     deleteCourse = (course) =>
-        deleteCourse(course._id).then(findAllCourses).then(courses => this.setState({courses:courses}));
+        deleteCourse(course._id)
+            .then(findAllCourses)
+            .then(courses => this.setState({courses:courses}));
 
     updateCourse = (course, title) =>
-        updateCourse(course._id,{title: title}).then(findAllCourses).then(courses => this.setState({courses: courses}));
+        updateCourse(course._id,{title: title})
+            .then(findAllCourses)
+            .then(courses => this.setState({courses: courses}));
 
     addCourse = () =>
         createCourse({
@@ -62,7 +66,6 @@ class CourseManagerContainer extends React.Component {
             this.setState({
                 showEditor: true
             });
-
     hideEditor = () =>
         this.setState({
             showEditor: false

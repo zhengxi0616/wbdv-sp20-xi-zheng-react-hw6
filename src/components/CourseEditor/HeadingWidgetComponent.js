@@ -22,6 +22,12 @@ export default class HeadingWidgetComponent extends React.Component {
                                 <option value="Paragraph">
                                     Paragraph
                                 </option>
+                                <option value="List">
+                                    List
+                                </option>
+                                <option value="Image">
+                                    Image
+                                </option>
                             </select>
                             <div>&nbsp;</div>
                         </div>
