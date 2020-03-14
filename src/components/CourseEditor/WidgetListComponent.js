@@ -131,6 +131,18 @@ export default class WidgetListComponent extends React.Component {
                                     updateWidget={this.props.updateWidget}/>
                                 }
 
+                                {widget.type === "List" &&
+                                <ListWidgetComponent
+                                    widget={widget}
+                                    updateWidget={this.props.updateWidget}/>
+                                }
+
+                                {widget.type === "Image" &&
+                                <ImageWidgetComponent
+                                    widget={widget}
+                                    updateWidget={this.props.updateWidget}/>
+                                }
+
                             </li>)
                         }
                     </span>
