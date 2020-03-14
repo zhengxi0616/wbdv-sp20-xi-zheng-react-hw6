@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a4cf18c-7a24-4273-ab6b-faa20c3f4846" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/CourseEditor/ListWidgetComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/HeadingWidgetComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/HeadingWidgetComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseEditor/WidgetListComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +79,7 @@
       <workItem from="1583722332289" duration="15000" />
       <workItem from="1583722369556" duration="16000" />
       <workItem from="1583722455010" duration="1171000" />
-      <workItem from="1584137444665" duration="2717000" />
+      <workItem from="1584137444665" duration="8511000" />
     </task>
     <servers />
   </component>

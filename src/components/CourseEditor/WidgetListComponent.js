@@ -2,6 +2,8 @@ import React from "react";
 import HeadingWidgetComponent from "./HeadingWidgetComponent";
 import {updateWidget} from "../../services/WidgetService";
 import ParagraphWidgetComponent from "./ParagraphWidgetComponent";
+import ListWidgetComponent from "./ListWidgetComponent";
+
 
 export default class WidgetListComponent extends React.Component {
     componentDidMount() {
@@ -20,7 +22,8 @@ export default class WidgetListComponent extends React.Component {
             value: '',
             name: '',
             type: 'Heading',
-            size: ''
+            size: '',
+            order: 'Unordered'
         }
     }
 
@@ -95,6 +98,26 @@ export default class WidgetListComponent extends React.Component {
                                 </span>
                                 }
 
+                                {widget.type === "List" &&
+                                <span>
+
+                                    {widget.order === "Ordered" &&
+                                        <ol>
+                                            <script>
+                                                for (x in {widget.value}) {
+                                                document.write("<li>1</li>")
+                                                }
+                                            </script>
+                                        </ol>
+                                    }
+                                    {widget.order === "Unordered" &&
+                                        <ul>
+                                            <li>{widget.value}</li>
+                                        </ul>
+                                     }
+                                </span>
+                                }
+
                             </li>
                         )
                         }
@@ -137,11 +160,6 @@ export default class WidgetListComponent extends React.Component {
                                     updateWidget={this.props.updateWidget}/>
                                 }
 
-                                {widget.type === "Image" &&
-                                <ImageWidgetComponent
-                                    widget={widget}
-                                    updateWidget={this.props.updateWidget}/>
-                                }
 
                             </li>)
                         }

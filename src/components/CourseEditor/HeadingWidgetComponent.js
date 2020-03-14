@@ -68,7 +68,7 @@ export default class HeadingWidgetComponent extends React.Component {
                         </div>
                         <div>&nbsp;</div>
                         <div className="col-lg-12">
-                            <input className="form-control" type="text" value={this.props.widget.value}
+                            <textarea className="form-control" type="text" value={this.props.widget.value}
                                    onChange={event => this.props.updateWidget(this.props.widget.id,
                                        {...this.props.widget,
                                            value:event.target.value
