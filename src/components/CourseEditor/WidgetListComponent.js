@@ -97,7 +97,23 @@ export default class WidgetListComponent extends React.Component {
                                 </span>
                                 }
 
+                                {widget.type === "List" &&
+                                <span>
+                                    {widget.order === "Ordered" &&
 
+                                    <ol>
+                                        {widget.value.split("\n").map((item) =>
+                                            <li>{item}</li>)}
+                                    </ol>
+                                    }
+                                    {widget.order === "Unordered" &&
+                                    <ul>
+                                        {widget.value.split("\n").map((item) =>
+                                            <li>{item}</li>)}
+                                    </ul>
+                                    }
+                                </span>
+                                }
 
                             </li>
                         )
@@ -119,8 +135,7 @@ export default class WidgetListComponent extends React.Component {
 
                                     <div className={"col-2"}>
 
-                                        <button className={"btn-sm"} onClick={() => this.props.deleteWidget(widget.id)
-                                            .then(() => this.props.findWidgetsForTopic(widget.topicId))}><i
+                                        <button className={"btn-sm"} onClick={() => this.props.deleteWidget(widget.id)}><i
                                             className="far fa-trash-alt"></i></button>
                                     </div>
                                 </div>
@@ -131,6 +146,12 @@ export default class WidgetListComponent extends React.Component {
                                 }
                                 {widget.type === "Paragraph" &&
                                 <ParagraphWidgetComponent
+                                    widget={widget}
+                                    updateWidget={this.props.updateWidget}/>
+                                }
+
+                                {widget.type === "List" &&
+                                <ListWidgetComponent
                                     widget={widget}
                                     updateWidget={this.props.updateWidget}/>
                                 }

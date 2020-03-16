@@ -53,20 +53,23 @@ export default class CourseEditorComponent extends React.Component {
                             courseId={this.props.courseId}/>
                     </div>
                     <div className="col-9">
+                        {this.props.match.params.moduleId &&
                         <LessonTabsContainer
                             lessonId={this.props.lessonId}
                             moduleId={this.props.moduleId}
                             history={this.props.history}
-                            courseId={this.props.courseId}/>
+                            courseId={this.props.courseId}/>}
+                        {this.props.match.params.lessonId &&
                         <TopicPillsContainer
                             topicId={this.props.topicId}
                             lessonId={this.props.lessonId}
                             moduleId={this.props.moduleId}
                             history={this.props.history}
-                            courseId={this.props.courseId}/>
+                            courseId={this.props.courseId}/>}
+                        {this.props.match.params.topicId &&
                         <WidgetContainer
                             topicId={this.props.topicId}
-                            history={this.props.history}/>
+                            history={this.props.history}/>}
 
                     </div>
                 </div>

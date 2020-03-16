@@ -18,7 +18,7 @@ export const findAllWidgets = () =>
         .then(response => response.json())
 
 export const deleteWidget = (widgetId) =>
-    fetch(`https://localhost:8080/api/widgets/${widgetId}`, {
+    fetch(`http://localhost:8080/api/widgets/${widgetId}`, {
         method: 'DELETE'
     }).then(response => response.json())
 
