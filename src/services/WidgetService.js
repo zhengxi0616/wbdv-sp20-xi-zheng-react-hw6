@@ -1,11 +1,11 @@
 import {WIDGETS_API_URL} from "../Common/Constants";
 
 export const findWidgetsForTopic = (tid) =>
-    fetch(`${WIDGETS_API_URL}/topics/${tid}/widgets`)
+    fetch(`http://localhost:8080/api/topics/${tid}/widgets`)
         .then(response => response.json())
 
 export const createWidget = (tid, newWidget) =>
-    fetch(`${WIDGETS_API_URL}/topics/${tid}/widgets`, {
+    fetch(`http://localhost:8080/api/topics/${tid}/widgets`, {
         method: "POST",
         body: JSON.stringify(newWidget),
         headers: {
@@ -14,16 +14,16 @@ export const createWidget = (tid, newWidget) =>
     }).then(response => response.json())
 
 export const findAllWidgets = () =>
-    fetch(`${WIDGETS_API_URL}/widgets`)
+    fetch(`http://localhost:8080/api/widgets`)
         .then(response => response.json())
 
 export const deleteWidget = (widgetId) =>
-    fetch(`${WIDGETS_API_URL}/widgets/${widgetId}`, {
+    fetch(`https://localhost:8080/api/widgets/${widgetId}`, {
         method: 'DELETE'
     }).then(response => response.json())
 
 export const updateWidget = async (widgetId, updateWidget) => {
-    const response = await fetch(`${WIDGETS_API_URL}/widgets/${widgetId}`, {
+    const response = await fetch(`http://localhost:8080/api/widgets/${widgetId}`, {
         method: 'PUT',
         body: JSON.stringify(updateWidget),
         headers: {

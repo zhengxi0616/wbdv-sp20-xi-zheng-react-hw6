@@ -1,11 +1,11 @@
 import {TOPICS_API_URL, LESSONS_TOPICS_API_URL} from "../Common/Constants";
 
 export const findTopicsForLesson = (lessonId) =>
-    fetch(LESSONS_TOPICS_API_URL(lessonId))
+    fetch(`http://localhost:8080/api/lessons/${lessonId}/topics`)
         .then(response => response.json())
 
 export const createTopic = (lessonId, topic) =>
-    fetch(LESSONS_TOPICS_API_URL(lessonId), {
+    fetch(`http://localhost:8080/api/lessons/${lessonId}/topics`, {
         method: "POST",
         body: JSON.stringify(topic),
         headers: {
@@ -14,12 +14,12 @@ export const createTopic = (lessonId, topic) =>
     }).then(response => response.json())
 
 export const deleteTopic = (topicId) =>
-    fetch(`${TOPICS_API_URL}/${topicId}`, {
+    fetch(`http://localhost:8080/api/topics/${topicId}`, {
         method: 'DELETE'
     }).then(response => response.json())
 
 export const updateTopic = async (topicId, topic) =>
-    fetch(`${TOPICS_API_URL}/${topicId}`, {
+    fetch(`http://localhost:8080/api/topics/${topicId}`, {
         method: 'PUT',
         body: JSON.stringify(topic),
         headers: {
@@ -27,7 +27,10 @@ export const updateTopic = async (topicId, topic) =>
         }
     }).then(response => response.json())
 
+export const findAllTopics = () =>
+    fetch(`http://localhost:8080/api/topics`)
+        .then(response => response.json())
 
 export default {
-    findTopicsForLesson, createTopic, deleteTopic, updateTopic
+    findTopicsForLesson, createTopic, deleteTopic, updateTopic,findAllTopics
 }

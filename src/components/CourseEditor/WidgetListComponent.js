@@ -37,7 +37,6 @@ export default class WidgetListComponent extends React.Component {
                         () => this.props.createWidget(this.props.topicId, {
                             value: "New Widget Content",
                             name: "Widget Name",
-                            id: Date.now().toString(),
                             type: "Heading",
                             size: 2
                         })
@@ -98,25 +97,7 @@ export default class WidgetListComponent extends React.Component {
                                 </span>
                                 }
 
-                                {widget.type === "List" &&
-                                <span>
 
-                                    {widget.order === "Ordered" &&
-                                        <ol>
-                                            <script>
-                                                for (x in {widget.value}) {
-                                                document.write("<li>1</li>")
-                                                }
-                                            </script>
-                                        </ol>
-                                    }
-                                    {widget.order === "Unordered" &&
-                                        <ul>
-                                            <li>{widget.value}</li>
-                                        </ul>
-                                     }
-                                </span>
-                                }
 
                             </li>
                         )
@@ -150,12 +131,6 @@ export default class WidgetListComponent extends React.Component {
                                 }
                                 {widget.type === "Paragraph" &&
                                 <ParagraphWidgetComponent
-                                    widget={widget}
-                                    updateWidget={this.props.updateWidget}/>
-                                }
-
-                                {widget.type === "List" &&
-                                <ListWidgetComponent
                                     widget={widget}
                                     updateWidget={this.props.updateWidget}/>
                                 }

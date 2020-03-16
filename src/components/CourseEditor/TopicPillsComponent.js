@@ -16,7 +16,7 @@ export default class TopicPillsComponent extends React.Component {
         editingTopicId: '',
         topic: {
             title: '',
-            _id: ''
+            id: ''
         }
     }
 
@@ -25,17 +25,17 @@ export default class TopicPillsComponent extends React.Component {
             <ul class="nav nav-pills">
                 {
                     this.props.topics && this.props.topics.map(topic =>
-                        <li className={`"nav-item"  ${topic._id === this.state.selectedTopicId ? 'active':''}`}
+                        <li className={`"nav-item"  ${topic.id === this.state.selectedTopicId ? 'active':''}`}
                             onClick={() => {
-                                const topicId = topic._id
+                                const topicId = topic.id
                                 this.props.history.push(`/course/${this.props.courseId}/module/${this.props.moduleId}/lesson/${this.props.lessonId}/topic/${topicId}`)
                                 this.setState({
-                                    selectedTopicId: topic._id
+                                    selectedTopicId: topic.id
                                 })}}
-                            key={topic._id}>
+                            key={topic.id}>
                             <a className={`nav-link
-                                            ${(this.state.editingTopicId === topic._id || this.state.selectedTopicId === topic._id)?'active':''}`}>
-                                {this.state.editingTopicId !== topic._id &&
+                                            ${(this.state.editingTopicId === topic.id || this.state.selectedTopicId === topic.id)?'active':''}`}>
+                                {this.state.editingTopicId !== topic.id &&
 
                             <span>
                                 {topic.title}
@@ -45,10 +45,10 @@ export default class TopicPillsComponent extends React.Component {
 
                                 <button className={"btn-sm"}
                                         onClick={() => {
-                                    const topicId = topic._id
+                                    const topicId = topic.id
                                     this.props.history.push(`/course/${this.props.courseId}/module/${this.props.moduleId}/lesson/${this.props.lessonId}/topic/${topicId}`)
                                     this.setState({
-                                        editingTopicId: topic._id
+                                        editingTopicId: topic.id
                                     })
                                 }}>
                                     <i className="fas fa-edit"></i>
@@ -56,7 +56,7 @@ export default class TopicPillsComponent extends React.Component {
                                 </div>
                             </span>
                             }
-                            {this.state.editingTopicId === topic._id&&
+                            {this.state.editingTopicId === topic.id&&
                             <span>
 
                                 <input
@@ -74,13 +74,13 @@ export default class TopicPillsComponent extends React.Component {
 
                                 <div className={"float-right"}>
                                     <button className={"btn-sm"}
-                                            onClick={() => this.props.updateTopic(topic._id, {title: this.state.topic.title})
+                                            onClick={() => this.props.updateTopic(topic.id, {title: this.state.topic.title})
                                         .then(() => this.setState({editingTopicId: ''}))
                                         .then(() => this.props.findTopicsForLesson(this.props.lessonId))}>
                                         <i className="fas fa-save"></i>
                                     </button>
                                     <button className={"btn-sm"}
-                                            onClick={() =>this.props.deleteTopic(topic._id)}>
+                                            onClick={() =>this.props.deleteTopic(topic.id)}>
                                         <i className="far fa-window-close"></i>
                                     </button>
                                 </div>
