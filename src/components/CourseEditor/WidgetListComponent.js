@@ -38,7 +38,8 @@ export default class WidgetListComponent extends React.Component {
                             value: "New Widget Content",
                             name: "Widget Name",
                             type: "Heading",
-                            size: 2
+                            size: 2,
+                            style:"Unordered"
                         })
                     }>
                         <i className="fas fa-lg fa-plus"></i>
@@ -99,14 +100,13 @@ export default class WidgetListComponent extends React.Component {
 
                                 {widget.type === "List" &&
                                 <span>
-                                    {widget.order === "Ordered" &&
-
+                                    {widget.style === "Ordered" &&
                                     <ol>
                                         {widget.value.split("\n").map((item) =>
                                             <li>{item}</li>)}
                                     </ol>
                                     }
-                                    {widget.order === "Unordered" &&
+                                    {widget.style === "Unordered" &&
                                     <ul>
                                         {widget.value.split("\n").map((item) =>
                                             <li>{item}</li>)}

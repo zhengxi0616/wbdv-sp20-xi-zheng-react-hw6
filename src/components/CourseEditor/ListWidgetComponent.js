@@ -45,8 +45,8 @@ export default class ListWidgetComponent extends React.Component {
                     <select className={"form-control form-control-lg"}
                             onChange={event => this.props.updateWidget(this.props.widget.id,
                                 {...this.props.widget,
-                                    order:event.target.value
-                                })} value={this.props.widget.order}>
+                                    style:event.target.value
+                                })} value={this.props.widget.style}>
                         <option value="Unordered">
                             Unordered List
                         </option>
