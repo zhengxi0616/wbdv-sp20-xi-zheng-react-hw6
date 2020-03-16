@@ -1,11 +1,11 @@
 import {WIDGETS_API_URL} from "../Common/Constants";
 
 export const findWidgetsForTopic = (tid) =>
-    fetch(`http://localhost:8080/api/topics/${tid}/widgets`)
+    fetch(`https://wbdv-mysql-xi-zheng-hw6.herokuapp.com/api/topics/${tid}/widgets`)
         .then(response => response.json())
 
 export const createWidget = (tid, newWidget) =>
-    fetch(`http://localhost:8080/api/topics/${tid}/widgets`, {
+    fetch(`https://wbdv-mysql-xi-zheng-hw6.herokuapp.com/api/topics/${tid}/widgets`, {
         method: "POST",
         body: JSON.stringify(newWidget),
         headers: {
@@ -14,16 +14,16 @@ export const createWidget = (tid, newWidget) =>
     }).then(response => response.json())
 
 export const findAllWidgets = () =>
-    fetch(`http://localhost:8080/api/widgets`)
+    fetch(`https://wbdv-mysql-xi-zheng-hw6.herokuapp.com/api/widgets`)
         .then(response => response.json())
 
 export const deleteWidget = (widgetId) =>
-    fetch(`http://localhost:8080/api/widgets/${widgetId}`, {
+    fetch(`https://wbdv-mysql-xi-zheng-hw6.herokuapp.com/api/widgets/${widgetId}`, {
         method: 'DELETE'
     }).then(response => response.json())
 
 export const updateWidget = async (widgetId, updateWidget) => {
-    const response = await fetch(`http://localhost:8080/api/widgets/${widgetId}`, {
+    const response = await fetch(`https://wbdv-mysql-xi-zheng-hw6.herokuapp.com/api/widgets/${widgetId}`, {
         method: 'PUT',
         body: JSON.stringify(updateWidget),
         headers: {
