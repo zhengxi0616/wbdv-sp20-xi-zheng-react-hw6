@@ -1,9 +1,9 @@
 import React from "react";
-import HeadingWidgetComponent from "./HeadingWidgetComponent";
+import HeadingWidgetComponent from "./WidgetComponents/HeadingWidgetComponent";
 import {updateWidget} from "../../services/WidgetService";
-import ParagraphWidgetComponent from "./ParagraphWidgetComponent";
-import ListWidgetComponent from "./ListWidgetComponent";
-import ImageWidgetComponent from "./ImageWidgetComponent";
+import ParagraphWidgetComponent from "./WidgetComponents/ParagraphWidgetComponent";
+import ListWidgetComponent from "./WidgetComponents/ListWidgetComponent";
+import ImageWidgetComponent from "./WidgetComponents/ImageWidgetComponent";
 
 
 export default class WidgetListComponent extends React.Component {

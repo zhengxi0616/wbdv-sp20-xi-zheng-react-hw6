@@ -1,5 +1,5 @@
 import React from 'react';
-import {updateWidget} from "../../services/WidgetService";
+import {updateWidget} from "../../../services/WidgetService";
 
 export default class ImageWidgetComponent extends React.Component {
     constructor(props) {
