@@ -3,6 +3,7 @@ import HeadingWidgetComponent from "./HeadingWidgetComponent";
 import {updateWidget} from "../../services/WidgetService";
 import ParagraphWidgetComponent from "./ParagraphWidgetComponent";
 import ListWidgetComponent from "./ListWidgetComponent";
+import ImageWidgetComponent from "./ImageWidgetComponent";
 
 
 export default class WidgetListComponent extends React.Component {
@@ -47,8 +48,7 @@ export default class WidgetListComponent extends React.Component {
 
                     <button className={"btn-sm col-1"}
                             onClick={
-                                ()=>this.props.widgets.map(widget => updateWidget(widget.id, widget))}
-                    >
+                                ()=>this.props.widgets.map(widget => updateWidget(widget.id, widget))}>
                                             <i className="fas fa-lg fa-save"></i>
                     </button>
 
@@ -115,6 +115,12 @@ export default class WidgetListComponent extends React.Component {
                                 </span>
                                 }
 
+                                {widget.type === "Image" &&
+                                <span>
+                                    <img src={widget.value}/>
+                                </span>
+                                }
+
                             </li>
                         )
                         }
@@ -156,6 +162,11 @@ export default class WidgetListComponent extends React.Component {
                                     updateWidget={this.props.updateWidget}/>
                                 }
 
+                                {widget.type === "Image" &&
+                                <ImageWidgetComponent
+                                    widget={widget}
+                                    updateWidget={this.props.updateWidget}/>
+                                }
 
                             </li>)
                         }
